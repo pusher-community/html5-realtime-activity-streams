@@ -30,7 +30,7 @@ function getActionText($activity_type, $activity_data) {
       $action_text = 'just navigated to the Activity Streams example page.';
       break;
     case 'test-event':
-      $action_text = 'just clicked the test button.';
+      $action_text = 'just clicked the <em>Send Test</em> button.';
       break;
     case 'scroll':
       $action_text = 'just scrolled to the '. $activity_data['position'] . ' of the page';

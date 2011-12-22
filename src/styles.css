@@ -1,3 +1,12 @@
+body {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.container {
+  width: 640px;
+}
+
 .hero-unit h1 {
   font-size: 45px;
 }
@@ -6,13 +15,30 @@
   padding-bottom: 20px;
 }
 
+.hero-unit p:last-child {
+  margin: 0;
+  line-height: 11px;
+}
+
+#gravatar {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
 #activity_stream_example1 {
   list-style: none;
 }
 
+ul.activity-stream.no-actions .activity-actions {
+  display: none;
+}
+
 ul.activity-stream {
   height: 400px;
-  overflow:auto;
+  overflow: auto;
 }
 
 ul.activity-stream li {

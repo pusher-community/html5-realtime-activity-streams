@@ -1,7 +1,7 @@
 <?php
 class Activity {
   
-  private $display_name = 'Somebody';
+  private $display_name = '<em>Anon</em>';
   private $image = 'http://www.gravatar.com/avatar/00000000000000000000000000000000?d=monsterid&s=48';
   private $action_text = null;
   private $date = null;

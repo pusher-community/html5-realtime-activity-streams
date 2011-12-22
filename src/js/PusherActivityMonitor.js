@@ -134,30 +134,3 @@ PusherActivityMonitor._buildListItem = function(activity) {
   
   return li;
 };
-
-/*<div class="stream-item-content">
-  <div class="image">
-      <img height="48" width="48" src="https://twimg0-a.akamaihd.net/profile_images/1648506030/denmark_normal.png" alt="Martin Beeby" class="user-profile-link">
-  </div>
-  <div class="content">
-    <div class="row">
-      <span class="user-name">
-        <a class="screen-name" title=""></a>
-        <span class="full-name">Martin Beeby</span>
-      </span>
-    </div>
-    <div class="row">
-      <div class="text">Time for a hazlenut latte at costa</div>
-    </div>
-    <div class="row">
-      <a href="" class="timestamp">
-        <span title="">1 minute ago</span>
-      </a>
-      <span class="actions">
-        <span class="tweet-action action-favorite">
-          <a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
-        </span>
-      </span>
-    </div>
-  </div>
-</div>*/

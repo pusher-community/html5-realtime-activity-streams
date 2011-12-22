@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>PHP HTML5 Realtime Activity Streams using Pusher</title>
+    
+    <link rel="stylesheet/less" type="text/css" href="lib/twitter-bootstrap/lib/bootstrap.less">
+    <script src="lib/less/less-1.1.5.min.js"></script>
+    
+    <link href="styles.css" rel="stylesheet" />
+    
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
+    <script src="js/PusherActivityMonitor.js"></script>
+    <script src="js/ExampleActivities.js"></script>    
+    <script>
+      $(function() {
+        
+        var pusher = new Pusher('49e26cb8e9dde3dfc009')
+        var activityChannel = pusher.subscribe('site-activity');
+        var activityMonitor = new PusherActivityMonitor(activityChannel, "#activity_stream_example1");
+        
+        var examples = new ExampleActivities(activityMonitor, pusher);
+        
+        $("#sendTest").click(function(){
+          activityMonitor.sendActivity('test-event');
+        });
+      });
+    </script>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <a class="brand" href="/">PHP HTML5 Realtime Activity Streams using Pusher</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-unit">
+        <h1>PHP HTML5 Realtime Activity Streams</h1>
+        <p>This page demonstrates HTML5 Realtime Activity Streams using <a href="http://pusher.com">Pusher</a>. This functionality can easily be added to any PHP application.</p>
+        <p>The demo below shows an example of a Twitter inspired activity stream along with some example activity events. The activity events are triggered via PHP using the <a href="https://github.com/squeeks/Pusher-PHP">PHP Pusher library</a>.</p>
+        <p><a href="#" class="btn primary large" target="_blank">Get the code &raquo;</a></p>
+        <p><small>We plan to update this sample to contain backend code in other technologies. Feel free to <a href="#">fork</a> and try it for yourself.</small></p>
+      </div>
+      
+      <section class="activity-stream">
+        
+        <div class="page-header">
+          <h1>Activity Stream Example</h1>
+        </div>
+        
+        <div id="gravatar" class="alert-message block-message info">
+          <p><strong>Why don't you provide your email address</strong> so your Gravatar and Gravatar profile can be looked up and used in the Activity Stream</p>
+          <div class="alert-actions">
+            <input class="xlarge" id="email" name="email" size="30" type="text" value="Email [optional]" />
+          </div>
+        </div>
+        
+        <div class="row show-grid">
+          
+          <div class="span4">
+            <h2>Send a test event</h2>
+            <p>
+              Why not try sending a test event by clicking button below.
+            </p>
+            <p><button id="sendTest" class="btn info">Send Test</button></p>
+          </div>
+          <div class="span7">
+            
+            <ul id="activity_stream_example1" class="activity-stream no-actions"></ul>
+            
+          </div>
+          
+        </div>
+        
+      </section>
+
+
+      <footer>
+        <p></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <a href="#"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 20000;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+
+  </body>
+</html>
