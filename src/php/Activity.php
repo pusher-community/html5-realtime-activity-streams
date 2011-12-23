@@ -73,8 +73,23 @@ class Activity {
   private function get_gravatar_profile($email) {
     $profile = null;
     $hash = $this->get_email_hash($email);
-    $str = file_get_contents( 'http://www.gravatar.com/' . $hash . '.php' );
-    $unserialized = unserialize( $str );
+    
+    $url = 'http://www.gravatar.com/' . $hash . '.php';
+    
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_HEADER, false);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    $response = curl_exec($curl);
+    $status = curl_getinfo($curl);
+    curl_close($curl);
+    
+    // doesn't work on phpfog shared environment
+    //$response = file_get_contents( $url );
+    
+    $unserialized = unserialize( $response );
     if ( is_array( $unserialized ) && isset( $unserialized['entry'] ) ) {
       $profile = $unserialized['entry'][0];
     }
