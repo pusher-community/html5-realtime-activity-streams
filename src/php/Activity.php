@@ -74,7 +74,7 @@ class Activity {
     $profile = null;
     $hash = $this->get_email_hash($email);
     
-    $url = 'http://www.gravatar.com/' . $hash . '.php';
+    $url = 'http://en.gravatar.com/' . $hash . '.php';
     
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
