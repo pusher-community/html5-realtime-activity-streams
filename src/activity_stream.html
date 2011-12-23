@@ -8,6 +8,7 @@
     <script src="lib/less/less-1.1.5.min.js"></script>
     
     <link href="styles.css" rel="stylesheet" />
+    <link href="activity-streams.css" rel="stylesheet" />
     
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,7 +22,7 @@
         
         var pusher = new Pusher('49e26cb8e9dde3dfc009')
         var activityChannel = pusher.subscribe('site-activity');
-        var activityMonitor = new PusherActivityMonitor(activityChannel, "#activity_stream_example1");
+        var activityMonitor = new PusherActivityMonitor(activityChannel, "#activity_stream_example");
         
         var examples = new ExampleActivities(activityMonitor, pusher);
         
@@ -75,7 +76,7 @@
           </div>
           <div class="span7">
             
-            <ul id="activity_stream_example1" class="activity-stream no-actions"></ul>
+            <ul id="activity_stream_example" class="activity-stream no-actions"></ul>
             
           </div>
           

@@ -11,6 +11,9 @@ function PusherActivityMonitor(activityChannel, ulSelector, options) {
   this._activityChannel = activityChannel;
   this._activityList = $(ulSelector);
   
+  this._activityChannel.bind('activity', function(activity) {
+      self._handleActivity.call(self, activity, activity.type);
+    });
   this._activityChannel.bind('page-load', function(activity) {
       self._handleActivity.call(self, activity, 'page-load');
     });

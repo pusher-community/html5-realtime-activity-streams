@@ -6,9 +6,11 @@ class Activity {
   private $action_text = null;
   private $date = null;
   private $id;
+  private $type;
   
   public function __construct($activity_type, $action_text, $email = null) {
     date_default_timezone_set('UTC');
+    $this->type = $activity_type;
     $this->id = uniqid();
     $this->date = date('Y-m-d H:i:s');
     
@@ -28,6 +30,7 @@ class Activity {
       'id' => $this->id,
       'body' => $this->action_text,
       'published' => $this->date,
+      'type' => $this->type,
       'actor' => array(
         'displayName' => $this->display_name,
         'objectType' => 'person',

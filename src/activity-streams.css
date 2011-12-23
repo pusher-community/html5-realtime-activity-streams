@@ -1,0 +1,100 @@
+ul.activity-stream {
+  list-style: none;
+}
+
+ul.activity-stream.no-actions .activity-actions {
+  display: none;
+}
+
+ul.activity-stream {
+  height: 400px;
+  overflow: auto;
+}
+
+ul.activity-stream li {
+  position: relative;
+  border-bottom: 1px solid #EBEBEB;
+  clear: both;
+  display: block;
+  outline: none;
+  margin-top: -1px;
+  border-top: 1px solid transparent;
+  overflow: auto;
+}
+
+ul.activity-stream li .page-load {
+  background-color: #DDF4FB;
+  border-color: #C6EDF9;
+  color: #404040;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.activity-stream li.page-load {
+  background-color: #D1EED1;
+  border-color: #BFE7BF;
+  color: #404040;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.activity-stream li.test-event {
+  background-color: #DDF4FB;
+  border-color: #C6EDF9;
+  color: #404040;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+ul.activity-stream li div.stream-item-content {
+  padding: 10px 20px;
+  font-size: 15px;
+  position: relative;
+  zoom: 1;
+}
+
+ul.activity-stream li .image {
+  float: left;
+  height: 48px;
+  overflow: hidden;
+  width: 48px;
+  margin-top: 3px;
+}
+
+ul.activity-stream li .screen-name {
+  font-weight: bold;
+  color: #333!important;
+}
+
+ul.activity-stream li .content {
+  margin-left: 58px;
+  min-height: 48px;
+}
+
+ul.activity-stream li .activity-row {
+  display: block;
+  position: relative;
+  line-height: 15px;
+}
+
+ul.activity-stream li .text {
+  padding: 0;
+  font-family: Arial,"Helvetica Neue",sans-serif;
+  line-height: 19px;
+  word-wrap: break-word;
+}
+
+ul.activity-stream li .timestamp {
+  color: #999!important;
+  font-size: 11px;
+}
+
+ul.activity-stream li .activity-actions span:first-child {
+  margin-left: 15px;
+}
+
+ul.activity-stream li .activity-actions {
+  color: #999!important;
+  font-size: 11px;
+}
+
+ul.activity-stream li .activity-actions span b {
+  font-weight: normal;
+}
