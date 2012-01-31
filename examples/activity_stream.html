@@ -14,15 +14,15 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://js.pusherapp.com/1.10/pusher.min.js"></script>
-    <script src="js/PusherActivityMonitor.js"></script>
+    <script src="http://js.pusher.com/1.11/pusher.min.js"></script>
+    <script src="../src/PusherActivityStreamer.js"></script>
     <script src="js/ExampleActivities.js"></script>    
     <script>
       $(function() {
         
         var pusher = new Pusher('49e26cb8e9dde3dfc009')
         var activityChannel = pusher.subscribe('site-activity');
-        var activityMonitor = new PusherActivityMonitor(activityChannel, "#activity_stream_example");
+        var activityMonitor = new PusherActivityStreamer(activityChannel, "#activity_stream_example");
         
         var examples = new ExampleActivities(activityMonitor, pusher);
         

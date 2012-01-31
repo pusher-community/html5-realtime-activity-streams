@@ -1,4 +1,4 @@
-function PusherActivityMonitor(activityChannel, ulSelector, options) {
+function PusherActivityStreamer(activityChannel, ulSelector, options) {
   var self = this;
   
   this._email = null;
@@ -30,11 +30,11 @@ function PusherActivityMonitor(activityChannel, ulSelector, options) {
   this._itemCount = 0;
 };
 
-PusherActivityMonitor.prototype._handleActivity = function(activity, eventType) {
+PusherActivityStreamer.prototype._handleActivity = function(activity, eventType) {
   var self = this;
   ++this._itemCount;
   
-  var activityItem = PusherActivityMonitor._buildListItem(activity);
+  var activityItem = PusherActivityStreamer._buildListItem(activity);
   activityItem.addClass(eventType);
   activityItem.hide();
   this._activityList.prepend(activityItem);
@@ -48,7 +48,7 @@ PusherActivityMonitor.prototype._handleActivity = function(activity, eventType) 
   }
 };
 
-PusherActivityMonitor._timeToDescription = function(time) {
+PusherActivityStreamer._timeToDescription = function(time) {
   if(time instanceof Date === false) {
     time = Date.parse(time);
   }
@@ -76,7 +76,7 @@ PusherActivityMonitor._timeToDescription = function(time) {
   return desc;
 };
 
-PusherActivityMonitor.prototype.sendActivity = function(activityType, activityData) {
+PusherActivityStreamer.prototype.sendActivity = function(activityType, activityData) {
   var data = {
     activity_type: activityType,
     activity_data: activityData
@@ -90,11 +90,11 @@ PusherActivityMonitor.prototype.sendActivity = function(activityType, activityDa
   })
 };
 
-PusherActivityMonitor.prototype.setEmail = function(value) {
+PusherActivityStreamer.prototype.setEmail = function(value) {
   this._email = value;
 };
 
-PusherActivityMonitor._buildListItem = function(activity) {
+PusherActivityStreamer._buildListItem = function(activity) {
   var li = $('<li class="activity"></li>');
   li.attr('data-activity-id', activity.id);
   var item = $('<div class="stream-item-content"></div>');
@@ -124,7 +124,7 @@ PusherActivityMonitor._buildListItem = function(activity) {
   
   var time = $('<div class="activity-row">' + 
                 '<a href="' + activity.link + '" class="timestamp">' +
-                  '<span title="' + activity.published + '">' + PusherActivityMonitor._timeToDescription(activity.published) + '</span>' +
+                  '<span title="' + activity.published + '">' + PusherActivityStreamer._timeToDescription(activity.published) + '</span>' +
                 '</a>' +
                 '<span class="activity-actions">' +
                   '<span class="tweet-action action-favorite">' +
