@@ -12,7 +12,7 @@ class Activity {
     date_default_timezone_set('UTC');
     $this->type = $activity_type;
     $this->id = uniqid();
-    $this->date = date('Y-m-d H:i:s');
+    $this->date = date('r');
     
     $this->action_text = $action_text;
     
