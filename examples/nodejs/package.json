@@ -1,0 +1,36 @@
+{
+  "name": "html5-realtime-activity-streams",
+  "version": "0.0.1",
+  "description": "HTML5 Realtime Activity Streams using Pusher",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pusher/html5-realtime-activity-streams"
+  },
+  "keywords": [
+    "pusher",
+    "realtime",
+    "activity",
+    "stream",
+    "feed"
+  ],
+  "author": "Robin Hawkes <robin@pusher.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pusher/html5-realtime-activity-streams/issues"
+  },
+  "homepage": "https://github.com/pusher/html5-realtime-activity-streams",
+  "dependencies": {
+    "express": "~4.7.2",
+    "body-parser": "~1.5.2",
+    "errorhandler": "~1.1.1",
+    "pusher": "~1.0.0",
+    "uuid": "~1.4.1",
+    "underscore": "~1.6.0",
+    "moment": "~2.7.0",
+    "gravatar": "git://github.com/robhawkes/node-gravatar.git"
+  }
+}
