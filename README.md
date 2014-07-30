@@ -10,7 +10,7 @@ The first version of this sample shows how to trigger realtime activity stream e
 
 ## Demo
 
-http://html5-realtime-activity-streams.phpfogapp.com/
+http://html5-realtime-activity-streams.pusher.io/
 
 ## Tutorial
 
