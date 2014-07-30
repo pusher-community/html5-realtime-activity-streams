@@ -1,6 +1,6 @@
 <?php
 require_once('lib/squeeks-Pusher-PHP/lib/Pusher.php');
-require_once('../../src/php/Activity.php');
+require_once('Activity.php');
 require_once('config.php');
 
 $activity_type = $_GET['activity_type'];
