@@ -16,3 +16,7 @@ http://html5-realtime-activity-streams.pusher.io/
 
 A tutorial explaining how to use the example can be found here:
 http://pusher.com/tutorials/realtime_activity_streams
+
+## Demo Deployment to Heroku
+
+A [heroku](https://github.com/pusher/html5-realtime-activity-streams/tree/heroku) branch has been created in order for the demo to be deployed to Heroku.
